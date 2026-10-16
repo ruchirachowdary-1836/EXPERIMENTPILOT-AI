@@ -1,0 +1,17 @@
+# One-command run:  docker compose up --build   ->  http://localhost:8080
+services:
+  backend:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    environment:
+      EP_DATABASE_URL: sqlite:////srv/backend/data/experimentpilot.db
+      EP_DATA_DIR: /srv/backend/data
+      EP_CORS_ORIGINS: http://localhost:8080
+      EP_ENVIRONMENT: docker
+    volumes: [ "epdata:/srv/backend/data" ]
+    expose: [ "8000" ]
+  frontend:
+    build: { context: ., dockerfile: frontend/Dockerfile }
+    ports: [ "8080:80" ]
+    depends_on: [ backend ]
+volumes:
+  epdata: {}

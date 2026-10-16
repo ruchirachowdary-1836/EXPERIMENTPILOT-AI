@@ -1,0 +1,97 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="dark"] {
+  --bg: 7 11 20;
+  --surface: 12 18 32;
+  --raised: 17 25 42;
+  --sunken: 9 14 25;
+  --line: 148 163 184;
+  --fg: 241 245 249;
+  --muted: 148 163 184;
+  --faint: 100 116 139;
+  --accent: 79 140 255;
+  --accent-fg: 255 255 255;
+  --cyan: 34 211 238;
+  --good: 52 211 153;
+  --warn: 251 191 36;
+  --bad: 251 113 133;
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --bg: 246 248 252;
+  --surface: 255 255 255;
+  --raised: 255 255 255;
+  --sunken: 241 245 249;
+  --line: 15 23 42;
+  --fg: 15 23 42;
+  --muted: 71 85 105;
+  --faint: 100 116 139;
+  --accent: 37 99 235;
+  --accent-fg: 255 255 255;
+  --cyan: 8 145 178;
+  --good: 5 150 105;
+  --warn: 180 83 9;
+  --bad: 225 29 72;
+  color-scheme: light;
+}
+
+@layer base {
+  * { @apply border-line/10; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-feature-settings: "cv11", "ss01", "tnum" 0;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 { @apply font-semibold tracking-tight; }
+  ::selection { background: rgb(var(--accent) / 0.35); }
+  :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; border-radius: 6px; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: rgb(var(--line) / 0.18); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background: rgb(var(--line) / 0.3); background-clip: padding-box; border: 2px solid transparent; }
+  .num { @apply font-mono; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+}
+
+@layer components {
+  .card {
+    @apply relative rounded-2xl border border-line/10 bg-surface/80 shadow-card backdrop-blur-sm;
+  }
+  .card-pad { @apply p-5 sm:p-6; }
+  .card-hover { @apply transition duration-200 hover:border-accent/40 hover:-translate-y-0.5 hover:shadow-glow; }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-faint; }
+  .h-page { @apply text-2xl sm:text-3xl font-semibold tracking-tight; }
+  .link { @apply text-accent hover:underline underline-offset-4; }
+  .divider { @apply h-px w-full bg-line/10; }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgb(var(--line) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+  .glow-blob { background: radial-gradient(closest-side, rgb(var(--accent) / 0.35), transparent); filter: blur(30px); }
+  .skeleton { @apply relative overflow-hidden rounded-lg bg-line/10; }
+  .skeleton::after { content: ""; @apply absolute inset-0 -translate-x-full animate-shimmer; background: linear-gradient(90deg, transparent, rgb(var(--line) / 0.12), transparent); }
+  .prose-ep p { @apply text-muted leading-relaxed; }
+  .prose-ep h3 { @apply mt-6 mb-2 text-base; }
+  .prose-ep ul { @apply list-disc pl-5 text-muted space-y-1; }
+  .prose-ep code { @apply font-mono text-[12.5px] rounded bg-sunken px-1.5 py-0.5 text-fg; }
+}
+
+/* React Flow theming */
+.react-flow { --xy-background-color: transparent; --xy-edge-stroke-default: rgb(var(--faint)); }
+.react-flow__attribution { display: none; }
+.react-flow__controls button { background: rgb(var(--raised)); border-color: rgb(var(--line) / 0.15); color: rgb(var(--fg)); fill: rgb(var(--fg)); }
+.react-flow__minimap { background: rgb(var(--sunken)) !important; }
+.react-flow__edge.taken path { stroke: rgb(var(--accent)); stroke-width: 2.5; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,469 @@
+{
+  "provenance": {
+    "method": "cumulative noisy-OR, Beta-smoothed",
+    "pseudo_count": 2.0,
+    "simulated": true,
+    "n_records": 528,
+    "dataset_names": [
+      "synthetic_credit",
+      "synthetic_churn"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "benchmark": "default-v1"
+  },
+  "models": {
+    "feature_drift": {
+      "experiment_id": "feature_drift",
+      "outcomes": [
+        "no_shift",
+        "moderate_shift",
+        "severe_shift"
+      ],
+      "leak": [
+        0.006153846153846154,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.9959208434440633,
+          0.6691411349684732
+        ],
+        "label_noise": [
+          0.0,
+          0.0
+        ],
+        "feature_leakage": [
+          0.6478328173374613,
+          0.3233868503652677
+        ],
+        "class_prior_shift": [
+          0.035959333946950056,
+          0.0
+        ],
+        "pipeline_change": [
+          0.9619278721445904,
+          0.5856365100969418
+        ],
+        "data_quality": [
+          0.46699021002426566,
+          0.32654648481986615
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "data_quality_audit": {
+      "experiment_id": "data_quality_audit",
+      "outcomes": [
+        "clean",
+        "minor_issues",
+        "serious_issues"
+      ],
+      "leak": [
+        0.006153846153846154,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.9605681532926115,
+          0.9056623427127024
+        ],
+        "label_noise": [
+          0.0,
+          0.0
+        ],
+        "feature_leakage": [
+          0.0,
+          0.0
+        ],
+        "class_prior_shift": [
+          0.0,
+          0.0
+        ],
+        "pipeline_change": [
+          0.8313948623546147,
+          0.596469542512708
+        ],
+        "data_quality": [
+          0.9972805622960421,
+          0.981042193272409
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "class_prior": {
+      "experiment_id": "class_prior",
+      "outcomes": [
+        "stable",
+        "moderate_shift",
+        "severe_shift"
+      ],
+      "leak": [
+        0.006153846153846154,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.0,
+          0.0
+        ],
+        "label_noise": [
+          0.3350974813823111,
+          0.16089136412877425
+        ],
+        "feature_leakage": [
+          0.0,
+          0.0
+        ],
+        "class_prior_shift": [
+          0.9972805622960421,
+          0.7779228354767924
+        ],
+        "pipeline_change": [
+          0.0,
+          0.0
+        ],
+        "data_quality": [
+          0.0,
+          0.0
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "label_noise": {
+      "experiment_id": "label_noise",
+      "outcomes": [
+        "no_excess_noise",
+        "some_excess_noise",
+        "high_excess_noise"
+      ],
+      "leak": [
+        0.04461538461538461,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.03958306132219169,
+          0.0
+        ],
+        "label_noise": [
+          0.8811855333594464,
+          0.614524596538985
+        ],
+        "feature_leakage": [
+          0.7892457675066371,
+          0.2556803977667288
+        ],
+        "class_prior_shift": [
+          0.0,
+          0.0
+        ],
+        "pipeline_change": [
+          0.025438481960221027,
+          0.0
+        ],
+        "data_quality": [
+          0.23760717238978113,
+          0.0661023304908197
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "leakage_scan": {
+      "experiment_id": "leakage_scan",
+      "outcomes": [
+        "no_leak_signature",
+        "possible_leak",
+        "likely_leak"
+      ],
+      "leak": [
+        0.006153846153846154,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.0,
+          0.0
+        ],
+        "label_noise": [
+          0.0,
+          0.0
+        ],
+        "feature_leakage": [
+          0.9945611245920842,
+          0.9665981500513875
+        ],
+        "class_prior_shift": [
+          0.07675089950631742,
+          0.011937168411988552
+        ],
+        "pipeline_change": [
+          0.0,
+          0.0
+        ],
+        "data_quality": [
+          0.008764956907371668,
+          0.0
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "pipeline_replay": {
+      "experiment_id": "pipeline_replay",
+      "outcomes": [
+        "identical",
+        "minor_differences",
+        "major_differences"
+      ],
+      "leak": [
+        0.006153846153846154,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.0,
+          0.0
+        ],
+        "label_noise": [
+          0.0,
+          0.0
+        ],
+        "feature_leakage": [
+          0.0,
+          0.0
+        ],
+        "class_prior_shift": [
+          0.0,
+          0.0
+        ],
+        "pipeline_change": [
+          0.9972805622960421,
+          0.737298963917669
+        ],
+        "data_quality": [
+          0.4846665550999917,
+          0.0
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "importance_weighted_eval": {
+      "experiment_id": "importance_weighted_eval",
+      "outcomes": [
+        "gap_not_explained",
+        "gap_partly_explained",
+        "gap_mostly_explained"
+      ],
+      "leak": [
+        0.04461538461538461,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.07211559385472421,
+          0.05842893252965198
+        ],
+        "label_noise": [
+          0.0,
+          0.0
+        ],
+        "feature_leakage": [
+          0.0,
+          0.0
+        ],
+        "class_prior_shift": [
+          0.18102885494189846,
+          0.0
+        ],
+        "pipeline_change": [
+          0.17961439700570137,
+          0.08370600816643992
+        ],
+        "data_quality": [
+          0.0,
+          0.0
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "slice_analysis": {
+      "experiment_id": "slice_analysis",
+      "outcomes": [
+        "uniform_drop",
+        "localized_drop",
+        "severely_localized_drop"
+      ],
+      "leak": [
+        0.006153846153846154,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.28750732156304915,
+          0.02773534068498107
+        ],
+        "label_noise": [
+          0.3215002928625219,
+          0.0
+        ],
+        "feature_leakage": [
+          0.7226173541963016,
+          0.05481792172439659
+        ],
+        "class_prior_shift": [
+          0.4302778010208351,
+          0.052561039971111945
+        ],
+        "pipeline_change": [
+          0.40308342398125674,
+          0.07964362101052747
+        ],
+        "data_quality": [
+          0.13793824784536857,
+          0.0006527596455654372
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "retrain_recent": {
+      "experiment_id": "retrain_recent",
+      "outcomes": [
+        "no_recovery",
+        "partial_recovery",
+        "strong_recovery"
+      ],
+      "leak": [
+        0.08307692307692308,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.42816978051877386,
+          0.07106747034804595
+        ],
+        "label_noise": [
+          0.0,
+          0.0
+        ],
+        "feature_leakage": [
+          0.7081897333575187,
+          0.2606455376239549
+        ],
+        "class_prior_shift": [
+          0.6625022673680392,
+          0.24213910724702103
+        ],
+        "pipeline_change": [
+          0.5578632323598767,
+          0.39515569011971885
+        ],
+        "data_quality": [
+          0.08772446943587886,
+          0.0
+        ],
+        "metric_bug": [
+          0.0,
+          0.0
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    },
+    "metric_recompute": {
+      "experiment_id": "metric_recompute",
+      "outcomes": [
+        "matches_report",
+        "minor_mismatch",
+        "major_mismatch"
+      ],
+      "leak": [
+        0.006153846153846154,
+        0.0020512820512820513
+      ],
+      "sens": {
+        "covariate_drift": [
+          0.0,
+          0.0
+        ],
+        "label_noise": [
+          0.0,
+          0.0
+        ],
+        "feature_leakage": [
+          0.0,
+          0.0
+        ],
+        "class_prior_shift": [
+          0.0,
+          0.0
+        ],
+        "pipeline_change": [
+          0.0,
+          0.0
+        ],
+        "data_quality": [
+          0.0,
+          0.0
+        ],
+        "metric_bug": [
+          0.9306543385490754,
+          0.602337435071248
+        ]
+      },
+      "n_runs": 528,
+      "source": "fault-injection simulation"
+    }
+  }
+}

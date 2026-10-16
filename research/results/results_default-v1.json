@@ -1,0 +1,2798 @@
+{
+  "config": {
+    "name": "default-v1",
+    "estimation_datasets": [
+      "synthetic_credit",
+      "synthetic_churn"
+    ],
+    "estimation_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "evaluation_datasets": [
+      "synthetic_credit",
+      "synthetic_churn",
+      "breast_cancer"
+    ],
+    "evaluation_seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "severities": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "faults": [
+      "covariate_drift",
+      "label_noise",
+      "feature_leakage",
+      "class_prior_shift",
+      "pipeline_change",
+      "data_quality",
+      "metric_bug"
+    ],
+    "pairs": [
+      [
+        "covariate_drift",
+        "label_noise"
+      ],
+      [
+        "covariate_drift",
+        "class_prior_shift"
+      ],
+      [
+        "feature_leakage",
+        "data_quality"
+      ],
+      [
+        "pipeline_change",
+        "label_noise"
+      ],
+      [
+        "data_quality",
+        "class_prior_shift"
+      ],
+      [
+        "covariate_drift",
+        "pipeline_change"
+      ],
+      [
+        "label_noise",
+        "class_prior_shift"
+      ],
+      [
+        "feature_leakage",
+        "covariate_drift"
+      ]
+    ],
+    "pair_severity": "medium",
+    "planners": [
+      "random",
+      "checklist",
+      "cheapest",
+      "max_eig",
+      "eig_per_cost",
+      "adaptive",
+      "lookahead2"
+    ],
+    "budget": 8.0,
+    "risk_cap": 0.15,
+    "risk_weight": 1.0,
+    "confidence_threshold": 0.9,
+    "min_score": 0.01,
+    "separation_weight": 0.0,
+    "max_active": 3,
+    "pseudo_count": 2.0,
+    "budgets": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12,
+      18
+    ],
+    "robustness_sigmas": [
+      0.0,
+      0.5,
+      1.0,
+      1.5
+    ],
+    "bootstrap": 1000,
+    "planner_seed": 12345
+  },
+  "simulated": true,
+  "disclaimer": "All results come from simulated fault injection on built-in datasets; they do not demonstrate real-world gains.",
+  "n_estimation_scenarios": 720,
+  "n_evaluation_scenarios": 720,
+  "summary": [
+    {
+      "planner": "random",
+      "label": "Random feasible",
+      "n_runs": 720,
+      "top1": 0.6982758620689655,
+      "top1_lo": 0.6637931034482759,
+      "top1_hi": 0.7313218390804598,
+      "top3": 0.9497126436781609,
+      "top3_lo": 0.9339080459770115,
+      "top3_hi": 0.9641163793103448,
+      "precision": 0.6293981481481481,
+      "precision_lo": 0.5969907407407408,
+      "precision_hi": 0.6615740740740741,
+      "recall": 0.6166666666666667,
+      "recall_lo": 0.5840277777777778,
+      "recall_hi": 0.6493229166666666,
+      "f1": 0.6058796296296296,
+      "f1_lo": 0.5744259259259259,
+      "f1_hi": 0.6370925925925925,
+      "exact": 0.4444444444444444,
+      "exact_lo": 0.4083333333333333,
+      "exact_hi": 0.48194444444444445,
+      "brier": 0.08709561524362226,
+      "brier_lo": 0.08160187151864029,
+      "brier_hi": 0.09284303477115403,
+      "cost": 7.579166666666667,
+      "cost_lo": 7.544791666666667,
+      "cost_hi": 7.607994791666666,
+      "n_experiments": 5.6097222222222225,
+      "n_experiments_lo": 5.561076388888889,
+      "n_experiments_hi": 5.6514236111111105,
+      "risk_total": 0.04861111111111111,
+      "risk_total_lo": 0.04513888888888889,
+      "risk_total_hi": 0.05236111111111111,
+      "risk_violations": 0.0,
+      "risk_violations_lo": 0.0,
+      "risk_violations_hi": 0.0,
+      "stopped_confident": 0.041666666666666664
+    },
+    {
+      "planner": "checklist",
+      "label": "Fixed checklist",
+      "n_runs": 720,
+      "top1": 0.7945402298850575,
+      "top1_lo": 0.764367816091954,
+      "top1_hi": 0.8247126436781609,
+      "top3": 0.9669540229885057,
+      "top3_lo": 0.9540229885057471,
+      "top3_hi": 0.9798850574712644,
+      "precision": 0.7564814814814814,
+      "precision_lo": 0.7247627314814814,
+      "precision_hi": 0.7870486111111111,
+      "recall": 0.7409722222222223,
+      "recall_lo": 0.7103993055555556,
+      "recall_hi": 0.7701388888888889,
+      "f1": 0.7381481481481482,
+      "f1_lo": 0.7082870370370371,
+      "f1_hi": 0.765667824074074,
+      "exact": 0.6375,
+      "exact_lo": 0.6,
+      "exact_hi": 0.6722222222222223,
+      "brier": 0.06941593106192544,
+      "brier_lo": 0.06288903420047826,
+      "brier_hi": 0.07607588398797571,
+      "cost": 7.75,
+      "cost_lo": 7.75,
+      "cost_hi": 7.75,
+      "n_experiments": 6.0,
+      "n_experiments_lo": 6.0,
+      "n_experiments_hi": 6.0,
+      "risk_total": 0.1,
+      "risk_total_lo": 0.1,
+      "risk_total_hi": 0.1,
+      "risk_violations": 0.0,
+      "risk_violations_lo": 0.0,
+      "risk_violations_hi": 0.0,
+      "stopped_confident": 0.18611111111111112
+    },
+    {
+      "planner": "cheapest",
+      "label": "Cheapest first",
+      "n_runs": 720,
+      "top1": 0.742816091954023,
+      "top1_lo": 0.7112068965517241,
+      "top1_hi": 0.7744252873563219,
+      "top3": 0.9482758620689655,
+      "top3_lo": 0.9324712643678161,
+      "top3_hi": 0.9640804597701149,
+      "precision": 0.64375,
+      "precision_lo": 0.6104108796296297,
+      "precision_hi": 0.6754745370370371,
+      "recall": 0.64375,
+      "recall_lo": 0.6111111111111112,
+      "recall_hi": 0.6770833333333334,
+      "f1": 0.6253240740740741,
+      "f1_lo": 0.5943020833333333,
+      "f1_hi": 0.6556956018518518,
+      "exact": 0.45,
+      "exact_lo": 0.4152777777777778,
+      "exact_hi": 0.4875,
+      "brier": 0.08899885325926493,
+      "brier_lo": 0.08370449480766391,
+      "brier_hi": 0.09440700968263437,
+      "cost": 6.75,
+      "cost_lo": 6.75,
+      "cost_hi": 6.75,
+      "n_experiments": 6.0,
+      "n_experiments_lo": 6.0,
+      "n_experiments_hi": 6.0,
+      "risk_total": 0.0,
+      "risk_total_lo": 0.0,
+      "risk_total_hi": 0.0,
+      "risk_violations": 0.0,
+      "risk_violations_lo": 0.0,
+      "risk_violations_hi": 0.0,
+      "stopped_confident": 0.0
+    },
+    {
+      "planner": "max_eig",
+      "label": "Max information gain",
+      "n_runs": 720,
+      "top1": 0.8520114942528736,
+      "top1_lo": 0.8261494252873564,
+      "top1_hi": 0.8764367816091954,
+      "top3": 0.9741379310344828,
+      "top3_lo": 0.9612068965517241,
+      "top3_hi": 0.985632183908046,
+      "precision": 0.7925925925925925,
+      "precision_lo": 0.7643518518518517,
+      "precision_hi": 0.8185243055555554,
+      "recall": 0.7895833333333333,
+      "recall_lo": 0.7625,
+      "recall_hi": 0.8152777777777778,
+      "f1": 0.7772685185185185,
+      "f1_lo": 0.7510983796296296,
+      "f1_hi": 0.8023194444444445,
+      "exact": 0.6458333333333334,
+      "exact_lo": 0.6125,
+      "exact_hi": 0.6833333333333333,
+      "brier": 0.06302535875010433,
+      "brier_lo": 0.057472020068823695,
+      "brier_hi": 0.06876806658346722,
+      "cost": 7.0055555555555555,
+      "cost_lo": 6.968055555555556,
+      "cost_hi": 7.041666666666667,
+      "n_experiments": 5.898611111111111,
+      "n_experiments_lo": 5.876354166666667,
+      "n_experiments_hi": 5.920833333333333,
+      "risk_total": 0.0736111111111111,
+      "risk_total_lo": 0.07041666666666666,
+      "risk_total_hi": 0.07694444444444443,
+      "risk_violations": 0.0,
+      "risk_violations_lo": 0.0,
+      "risk_violations_hi": 0.0,
+      "stopped_confident": 0.1388888888888889
+    },
+    {
+      "planner": "eig_per_cost",
+      "label": "Information gain per cost",
+      "n_runs": 720,
+      "top1": 0.8491379310344828,
+      "top1_lo": 0.8232758620689655,
+      "top1_hi": 0.875,
+      "top3": 0.9741379310344828,
+      "top3_lo": 0.9626077586206897,
+      "top3_hi": 0.985632183908046,
+      "precision": 0.7912037037037039,
+      "precision_lo": 0.7631828703703704,
+      "precision_hi": 0.8166782407407407,
+      "recall": 0.7840277777777778,
+      "recall_lo": 0.7569444444444444,
+      "recall_hi": 0.8104340277777777,
+      "f1": 0.7742592592592591,
+      "f1_lo": 0.7476377314814815,
+      "f1_hi": 0.7997268518518518,
+      "exact": 0.6388888888888888,
+      "exact_lo": 0.6055208333333333,
+      "exact_hi": 0.6736111111111112,
+      "brier": 0.06462941381427852,
+      "brier_lo": 0.058942892260941813,
+      "brier_hi": 0.07050195288931187,
+      "cost": 6.8069444444444445,
+      "cost_lo": 6.769444444444445,
+      "cost_hi": 6.844479166666666,
+      "n_experiments": 5.886111111111111,
+      "n_experiments_lo": 5.862465277777778,
+      "n_experiments_hi": 5.909722222222222,
+      "risk_total": 0.07333333333333333,
+      "risk_total_lo": 0.07027777777777777,
+      "risk_total_hi": 0.07639236111111111,
+      "risk_violations": 0.0,
+      "risk_violations_lo": 0.0,
+      "risk_violations_hi": 0.0,
+      "stopped_confident": 0.1486111111111111
+    },
+    {
+      "planner": "adaptive",
+      "label": "Cost-and-risk-aware adaptive",
+      "n_runs": 720,
+      "top1": 0.8491379310344828,
+      "top1_lo": 0.8232758620689655,
+      "top1_hi": 0.875,
+      "top3": 0.9741379310344828,
+      "top3_lo": 0.9626077586206897,
+      "top3_hi": 0.985632183908046,
+      "precision": 0.7912037037037039,
+      "precision_lo": 0.7631828703703704,
+      "precision_hi": 0.8166782407407407,
+      "recall": 0.7840277777777778,
+      "recall_lo": 0.7569444444444444,
+      "recall_hi": 0.8104340277777777,
+      "f1": 0.7742592592592591,
+      "f1_lo": 0.7476377314814815,
+      "f1_hi": 0.7997268518518518,
+      "exact": 0.6388888888888888,
+      "exact_lo": 0.6055208333333333,
+      "exact_hi": 0.6736111111111112,
+      "brier": 0.06462941381427852,
+      "brier_lo": 0.058942892260941813,
+      "brier_hi": 0.07050195288931187,
+      "cost": 6.8069444444444445,
+      "cost_lo": 6.769444444444445,
+      "cost_hi": 6.844479166666666,
+      "n_experiments": 5.886111111111111,
+      "n_experiments_lo": 5.862465277777778,
+      "n_experiments_hi": 5.909722222222222,
+      "risk_total": 0.07333333333333333,
+      "risk_total_lo": 0.07027777777777777,
+      "risk_total_hi": 0.07639236111111111,
+      "risk_violations": 0.0,
+      "risk_violations_lo": 0.0,
+      "risk_violations_hi": 0.0,
+      "stopped_confident": 0.1486111111111111
+    },
+    {
+      "planner": "lookahead2",
+      "label": "Two-step lookahead",
+      "n_runs": 720,
+      "top1": 0.8563218390804598,
+      "top1_lo": 0.8304597701149425,
+      "top1_hi": 0.8807471264367817,
+      "top3": 0.9755747126436781,
+      "top3_lo": 0.9626436781609196,
+      "top3_hi": 0.9870689655172413,
+      "precision": 0.7953703703703705,
+      "precision_lo": 0.7675925925925925,
+      "precision_hi": 0.8210648148148147,
+      "recall": 0.7888888888888889,
+      "recall_lo": 0.7617881944444445,
+      "recall_hi": 0.8152777777777778,
+      "f1": 0.7786574074074072,
+      "f1_lo": 0.7518055555555555,
+      "f1_hi": 0.8036180555555557,
+      "exact": 0.6402777777777777,
+      "exact_lo": 0.6069444444444444,
+      "exact_hi": 0.6777777777777778,
+      "brier": 0.06422042700391722,
+      "brier_lo": 0.05845863944416179,
+      "brier_hi": 0.07005118058618906,
+      "cost": 7.002777777777778,
+      "cost_lo": 6.969444444444444,
+      "cost_hi": 7.036111111111111,
+      "n_experiments": 6.0,
+      "n_experiments_lo": 6.0,
+      "n_experiments_hi": 6.0,
+      "risk_total": 0.07263888888888889,
+      "risk_total_lo": 0.06944444444444445,
+      "risk_total_hi": 0.07569791666666666,
+      "risk_violations": 0.0,
+      "risk_violations_lo": 0.0,
+      "risk_violations_hi": 0.0,
+      "stopped_confident": 0.13055555555555556
+    }
+  ],
+  "calibration": {
+    "random": {
+      "ece": 0.0402393213201519,
+      "brier": 0.08709561524362226,
+      "reliability": [
+        {
+          "bin": 0,
+          "confidence": 0.013983866873415652,
+          "accuracy": 0.030204962243797196,
+          "count": 2781
+        },
+        {
+          "bin": 1,
+          "confidence": 0.14205270733524988,
+          "accuracy": 0.1282051282051282,
+          "count": 585
+        },
+        {
+          "bin": 2,
+          "confidence": 0.2508681845499543,
+          "accuracy": 0.1434878587196468,
+          "count": 453
+        },
+        {
+          "bin": 3,
+          "confidence": 0.34577637652701065,
+          "accuracy": 0.23417721518987342,
+          "count": 316
+        },
+        {
+          "bin": 4,
+          "confidence": 0.4511229994081054,
+          "accuracy": 0.41304347826086957,
+          "count": 138
+        },
+        {
+          "bin": 5,
+          "confidence": 0.5476872178780687,
+          "accuracy": 0.42657342657342656,
+          "count": 143
+        },
+        {
+          "bin": 6,
+          "confidence": 0.65311170403594,
+          "accuracy": 0.5416666666666666,
+          "count": 168
+        },
+        {
+          "bin": 7,
+          "confidence": 0.7440986617435597,
+          "accuracy": 0.6,
+          "count": 105
+        },
+        {
+          "bin": 8,
+          "confidence": 0.8495419529145943,
+          "accuracy": 0.853448275862069,
+          "count": 116
+        },
+        {
+          "bin": 9,
+          "confidence": 0.969384474705734,
+          "accuracy": 0.9319148936170213,
+          "count": 235
+        }
+      ]
+    },
+    "checklist": {
+      "ece": 0.0403592584067728,
+      "brier": 0.06941593106192545,
+      "reliability": [
+        {
+          "bin": 0,
+          "confidence": 0.011582780692922992,
+          "accuracy": 0.026525198938992044,
+          "count": 3393
+        },
+        {
+          "bin": 1,
+          "confidence": 0.16025149992493476,
+          "accuracy": 0.1598173515981735,
+          "count": 219
+        },
+        {
+          "bin": 2,
+          "confidence": 0.23865428424637244,
+          "accuracy": 0.10108303249097472,
+          "count": 277
+        },
+        {
+          "bin": 3,
+          "confidence": 0.3510056914385206,
+          "accuracy": 0.23376623376623376,
+          "count": 231
+        },
+        {
+          "bin": 4,
+          "confidence": 0.45322229535246283,
+          "accuracy": 0.3252032520325203,
+          "count": 123
+        },
+        {
+          "bin": 5,
+          "confidence": 0.5743376585187436,
+          "accuracy": 0.5961538461538461,
+          "count": 52
+        },
+        {
+          "bin": 6,
+          "confidence": 0.6437442781787766,
+          "accuracy": 0.7,
+          "count": 40
+        },
+        {
+          "bin": 7,
+          "confidence": 0.7647263012526606,
+          "accuracy": 0.8,
+          "count": 65
+        },
+        {
+          "bin": 8,
+          "confidence": 0.8728661627194251,
+          "accuracy": 0.7727272727272727,
+          "count": 242
+        },
+        {
+          "bin": 9,
+          "confidence": 0.9667562627241542,
+          "accuracy": 0.8618090452261307,
+          "count": 398
+        }
+      ]
+    },
+    "cheapest": {
+      "ece": 0.04433743680899474,
+      "brier": 0.08899885325926493,
+      "reliability": [
+        {
+          "bin": 0,
+          "confidence": 0.0056888461159956905,
+          "accuracy": 0.015180265654648957,
+          "count": 2635
+        },
+        {
+          "bin": 1,
+          "confidence": 0.13831306818623704,
+          "accuracy": 0.15016501650165018,
+          "count": 606
+        },
+        {
+          "bin": 2,
+          "confidence": 0.2618911508411355,
+          "accuracy": 0.15228426395939088,
+          "count": 394
+        },
+        {
+          "bin": 3,
+          "confidence": 0.3408390331246239,
+          "accuracy": 0.25821596244131456,
+          "count": 426
+        },
+        {
+          "bin": 4,
+          "confidence": 0.4575569224043142,
+          "accuracy": 0.2191780821917808,
+          "count": 146
+        },
+        {
+          "bin": 5,
+          "confidence": 0.5435550168654314,
+          "accuracy": 0.49707602339181284,
+          "count": 171
+        },
+        {
+          "bin": 6,
+          "confidence": 0.6557645843579178,
+          "accuracy": 0.5160142348754448,
+          "count": 281
+        },
+        {
+          "bin": 7,
+          "confidence": 0.7148020861260681,
+          "accuracy": 0.26666666666666666,
+          "count": 45
+        },
+        {
+          "bin": 8,
+          "confidence": 0.8239574775593379,
+          "accuracy": 0.883495145631068,
+          "count": 103
+        },
+        {
+          "bin": 9,
+          "confidence": 0.9723881045694841,
+          "accuracy": 0.9527896995708155,
+          "count": 233
+        }
+      ]
+    },
+    "max_eig": {
+      "ece": 0.041282865855384085,
+      "brier": 0.06302535875010433,
+      "reliability": [
+        {
+          "bin": 0,
+          "confidence": 0.008110247947047485,
+          "accuracy": 0.0163566388710712,
+          "count": 3118
+        },
+        {
+          "bin": 1,
+          "confidence": 0.1419102657373178,
+          "accuracy": 0.12477064220183487,
+          "count": 545
+        },
+        {
+          "bin": 2,
+          "confidence": 0.24686087951983118,
+          "accuracy": 0.09782608695652174,
+          "count": 276
+        },
+        {
+          "bin": 3,
+          "confidence": 0.36182941200891144,
+          "accuracy": 0.2818181818181818,
+          "count": 110
+        },
+        {
+          "bin": 4,
+          "confidence": 0.45599001396184957,
+          "accuracy": 0.1793103448275862,
+          "count": 145
+        },
+        {
+          "bin": 5,
+          "confidence": 0.5316053201675038,
+          "accuracy": 0.5789473684210527,
+          "count": 57
+        },
+        {
+          "bin": 6,
+          "confidence": 0.6501891798381145,
+          "accuracy": 0.8461538461538461,
+          "count": 26
+        },
+        {
+          "bin": 7,
+          "confidence": 0.7573057682587372,
+          "accuracy": 0.4358974358974359,
+          "count": 78
+        },
+        {
+          "bin": 8,
+          "confidence": 0.8649240333633935,
+          "accuracy": 0.7843137254901961,
+          "count": 204
+        },
+        {
+          "bin": 9,
+          "confidence": 0.9764053664974942,
+          "accuracy": 0.9064449064449065,
+          "count": 481
+        }
+      ]
+    },
+    "eig_per_cost": {
+      "ece": 0.04153854526678774,
+      "brier": 0.06462941381427853,
+      "reliability": [
+        {
+          "bin": 0,
+          "confidence": 0.007206324471303742,
+          "accuracy": 0.01610305958132045,
+          "count": 3105
+        },
+        {
+          "bin": 1,
+          "confidence": 0.1410893364826197,
+          "accuracy": 0.1346153846153846,
+          "count": 520
+        },
+        {
+          "bin": 2,
+          "confidence": 0.24601091193899868,
+          "accuracy": 0.07720588235294118,
+          "count": 272
+        },
+        {
+          "bin": 3,
+          "confidence": 0.35986216047860553,
+          "accuracy": 0.24113475177304963,
+          "count": 141
+        },
+        {
+          "bin": 4,
+          "confidence": 0.4567497930087563,
+          "accuracy": 0.24375,
+          "count": 160
+        },
+        {
+          "bin": 5,
+          "confidence": 0.5332307604380524,
+          "accuracy": 0.515625,
+          "count": 64
+        },
+        {
+          "bin": 6,
+          "confidence": 0.6495095952320572,
+          "accuracy": 0.8620689655172413,
+          "count": 29
+        },
+        {
+          "bin": 7,
+          "confidence": 0.7537721848606386,
+          "accuracy": 0.42857142857142855,
+          "count": 70
+        },
+        {
+          "bin": 8,
+          "confidence": 0.8605098153827165,
+          "accuracy": 0.8026315789473685,
+          "count": 228
+        },
+        {
+          "bin": 9,
+          "confidence": 0.9786622391284796,
+          "accuracy": 0.893569844789357,
+          "count": 451
+        }
+      ]
+    },
+    "adaptive": {
+      "ece": 0.04153854526678774,
+      "brier": 0.06462941381427853,
+      "reliability": [
+        {
+          "bin": 0,
+          "confidence": 0.007206324471303742,
+          "accuracy": 0.01610305958132045,
+          "count": 3105
+        },
+        {
+          "bin": 1,
+          "confidence": 0.1410893364826197,
+          "accuracy": 0.1346153846153846,
+          "count": 520
+        },
+        {
+          "bin": 2,
+          "confidence": 0.24601091193899868,
+          "accuracy": 0.07720588235294118,
+          "count": 272
+        },
+        {
+          "bin": 3,
+          "confidence": 0.35986216047860553,
+          "accuracy": 0.24113475177304963,
+          "count": 141
+        },
+        {
+          "bin": 4,
+          "confidence": 0.4567497930087563,
+          "accuracy": 0.24375,
+          "count": 160
+        },
+        {
+          "bin": 5,
+          "confidence": 0.5332307604380524,
+          "accuracy": 0.515625,
+          "count": 64
+        },
+        {
+          "bin": 6,
+          "confidence": 0.6495095952320572,
+          "accuracy": 0.8620689655172413,
+          "count": 29
+        },
+        {
+          "bin": 7,
+          "confidence": 0.7537721848606386,
+          "accuracy": 0.42857142857142855,
+          "count": 70
+        },
+        {
+          "bin": 8,
+          "confidence": 0.8605098153827165,
+          "accuracy": 0.8026315789473685,
+          "count": 228
+        },
+        {
+          "bin": 9,
+          "confidence": 0.9786622391284796,
+          "accuracy": 0.893569844789357,
+          "count": 451
+        }
+      ]
+    },
+    "lookahead2": {
+      "ece": 0.04134370322404459,
+      "brier": 0.06422042700391724,
+      "reliability": [
+        {
+          "bin": 0,
+          "confidence": 0.006694782647149302,
+          "accuracy": 0.014544279250161603,
+          "count": 3094
+        },
+        {
+          "bin": 1,
+          "confidence": 0.14105423043606702,
+          "accuracy": 0.13409961685823754,
+          "count": 522
+        },
+        {
+          "bin": 2,
+          "confidence": 0.2461183252184749,
+          "accuracy": 0.07835820895522388,
+          "count": 268
+        },
+        {
+          "bin": 3,
+          "confidence": 0.36137942136368606,
+          "accuracy": 0.2446043165467626,
+          "count": 139
+        },
+        {
+          "bin": 4,
+          "confidence": 0.45625140767503136,
+          "accuracy": 0.2485207100591716,
+          "count": 169
+        },
+        {
+          "bin": 5,
+          "confidence": 0.534500783648523,
+          "accuracy": 0.4782608695652174,
+          "count": 69
+        },
+        {
+          "bin": 6,
+          "confidence": 0.6479156834736216,
+          "accuracy": 0.8928571428571429,
+          "count": 28
+        },
+        {
+          "bin": 7,
+          "confidence": 0.7553162925926854,
+          "accuracy": 0.43661971830985913,
+          "count": 71
+        },
+        {
+          "bin": 8,
+          "confidence": 0.8619991927500688,
+          "accuracy": 0.810126582278481,
+          "count": 237
+        },
+        {
+          "bin": 9,
+          "confidence": 0.9785496488855984,
+          "accuracy": 0.891647855530474,
+          "count": 443
+        }
+      ]
+    }
+  },
+  "paired_tests": [
+    {
+      "reference": "adaptive",
+      "other": "random",
+      "metric": "cost",
+      "n": 720,
+      "mean_difference": -0.7722222222222223,
+      "wilcoxon_p": 2.1236709943267113e-84,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "random",
+      "metric": "top1",
+      "n": 696,
+      "mean_difference": 0.15086206896551724,
+      "wilcoxon_p": 8.28875885490537e-17,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "random",
+      "metric": "f1",
+      "n": 720,
+      "mean_difference": 0.16837962962962963,
+      "wilcoxon_p": 3.2632102998401888e-24,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "checklist",
+      "metric": "cost",
+      "n": 720,
+      "mean_difference": -0.9430555555555555,
+      "wilcoxon_p": 3.913608410958311e-118,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "checklist",
+      "metric": "top1",
+      "n": 696,
+      "mean_difference": 0.05459770114942529,
+      "wilcoxon_p": 9.989051586896954e-06,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "checklist",
+      "metric": "f1",
+      "n": 720,
+      "mean_difference": 0.0361111111111111,
+      "wilcoxon_p": 0.0005397471340326082,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "cheapest",
+      "metric": "cost",
+      "n": 720,
+      "mean_difference": 0.05694444444444444,
+      "wilcoxon_p": 0.004189038973359425,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "cheapest",
+      "metric": "top1",
+      "n": 696,
+      "mean_difference": 0.10632183908045977,
+      "wilcoxon_p": 3.02402565046433e-11,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "cheapest",
+      "metric": "f1",
+      "n": 720,
+      "mean_difference": 0.1489351851851852,
+      "wilcoxon_p": 5.976275250810075e-22,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "max_eig",
+      "metric": "cost",
+      "n": 720,
+      "mean_difference": -0.1986111111111111,
+      "wilcoxon_p": 1.1412543051684184e-19,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "max_eig",
+      "metric": "top1",
+      "n": 696,
+      "mean_difference": -0.0028735632183908046,
+      "wilcoxon_p": 0.6698153575994166,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "max_eig",
+      "metric": "f1",
+      "n": 720,
+      "mean_difference": -0.0030092592592592597,
+      "wilcoxon_p": 0.45597155535300093,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "eig_per_cost",
+      "metric": "cost",
+      "n": 720,
+      "mean_difference": 0.0,
+      "wilcoxon_p": 1.0,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "eig_per_cost",
+      "metric": "top1",
+      "n": 696,
+      "mean_difference": 0.0,
+      "wilcoxon_p": 1.0,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "eig_per_cost",
+      "metric": "f1",
+      "n": 720,
+      "mean_difference": 0.0,
+      "wilcoxon_p": 1.0,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "lookahead2",
+      "metric": "cost",
+      "n": 720,
+      "mean_difference": -0.19583333333333333,
+      "wilcoxon_p": 6.32455140885761e-17,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "lookahead2",
+      "metric": "top1",
+      "n": 696,
+      "mean_difference": -0.007183908045977011,
+      "wilcoxon_p": 0.025347318677468252,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    },
+    {
+      "reference": "adaptive",
+      "other": "lookahead2",
+      "metric": "f1",
+      "n": 720,
+      "mean_difference": -0.0043981481481481476,
+      "wilcoxon_p": 0.130262175732052,
+      "note": "paired by scenario; lower cost is better, higher top1/f1 is better"
+    }
+  ],
+  "agreement": {
+    "planners": [
+      "adaptive",
+      "cheapest",
+      "checklist",
+      "eig_per_cost",
+      "lookahead2",
+      "max_eig",
+      "random"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "by_fault": [
+    {
+      "truth": "none",
+      "planner": "random",
+      "n": 24,
+      "top1": null,
+      "f1": 0.7916666666666666,
+      "cost": 7.427083333333333
+    },
+    {
+      "truth": "none",
+      "planner": "checklist",
+      "n": 24,
+      "top1": null,
+      "f1": 0.875,
+      "cost": 7.75
+    },
+    {
+      "truth": "none",
+      "planner": "cheapest",
+      "n": 24,
+      "top1": null,
+      "f1": 0.875,
+      "cost": 6.75
+    },
+    {
+      "truth": "none",
+      "planner": "max_eig",
+      "n": 24,
+      "top1": null,
+      "f1": 0.7916666666666666,
+      "cost": 6.833333333333333
+    },
+    {
+      "truth": "none",
+      "planner": "eig_per_cost",
+      "n": 24,
+      "top1": null,
+      "f1": 0.7916666666666666,
+      "cost": 6.25
+    },
+    {
+      "truth": "none",
+      "planner": "adaptive",
+      "n": 24,
+      "top1": null,
+      "f1": 0.7916666666666666,
+      "cost": 6.25
+    },
+    {
+      "truth": "none",
+      "planner": "lookahead2",
+      "n": 24,
+      "top1": null,
+      "f1": 0.7916666666666666,
+      "cost": 7.416666666666667
+    },
+    {
+      "truth": "covariate_drift",
+      "planner": "random",
+      "n": 72,
+      "top1": 0.875,
+      "f1": 0.7777777777777778,
+      "cost": 7.618055555555555
+    },
+    {
+      "truth": "covariate_drift",
+      "planner": "checklist",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.9444444444444444,
+      "cost": 7.75
+    },
+    {
+      "truth": "covariate_drift",
+      "planner": "cheapest",
+      "n": 72,
+      "top1": 0.875,
+      "f1": 0.8055555555555556,
+      "cost": 6.75
+    },
+    {
+      "truth": "covariate_drift",
+      "planner": "max_eig",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.9398148148148149,
+      "cost": 6.763888888888889
+    },
+    {
+      "truth": "covariate_drift",
+      "planner": "eig_per_cost",
+      "n": 72,
+      "top1": 1.0,
+      "f1": 0.9953703703703705,
+      "cost": 6.75
+    },
+    {
+      "truth": "covariate_drift",
+      "planner": "adaptive",
+      "n": 72,
+      "top1": 1.0,
+      "f1": 0.9953703703703705,
+      "cost": 6.75
+    },
+    {
+      "truth": "covariate_drift",
+      "planner": "lookahead2",
+      "n": 72,
+      "top1": 1.0,
+      "f1": 0.9953703703703705,
+      "cost": 6.75
+    },
+    {
+      "truth": "label_noise",
+      "planner": "random",
+      "n": 72,
+      "top1": 0.5833333333333334,
+      "f1": 0.4305555555555556,
+      "cost": 7.614583333333333
+    },
+    {
+      "truth": "label_noise",
+      "planner": "checklist",
+      "n": 72,
+      "top1": 0.8055555555555556,
+      "f1": 0.6203703703703703,
+      "cost": 7.75
+    },
+    {
+      "truth": "label_noise",
+      "planner": "cheapest",
+      "n": 72,
+      "top1": 0.5555555555555556,
+      "f1": 0.10185185185185185,
+      "cost": 6.75
+    },
+    {
+      "truth": "label_noise",
+      "planner": "max_eig",
+      "n": 72,
+      "top1": 0.6388888888888888,
+      "f1": 0.6018518518518517,
+      "cost": 7.194444444444445
+    },
+    {
+      "truth": "label_noise",
+      "planner": "eig_per_cost",
+      "n": 72,
+      "top1": 0.6666666666666666,
+      "f1": 0.6018518518518517,
+      "cost": 7.361111111111111
+    },
+    {
+      "truth": "label_noise",
+      "planner": "adaptive",
+      "n": 72,
+      "top1": 0.6666666666666666,
+      "f1": 0.6018518518518517,
+      "cost": 7.361111111111111
+    },
+    {
+      "truth": "label_noise",
+      "planner": "lookahead2",
+      "n": 72,
+      "top1": 0.6666666666666666,
+      "f1": 0.6018518518518517,
+      "cost": 7.416666666666667
+    },
+    {
+      "truth": "feature_leakage",
+      "planner": "random",
+      "n": 72,
+      "top1": 0.6527777777777778,
+      "f1": 0.6203703703703705,
+      "cost": 7.586805555555555
+    },
+    {
+      "truth": "feature_leakage",
+      "planner": "checklist",
+      "n": 72,
+      "top1": 0.4444444444444444,
+      "f1": 0.4444444444444444,
+      "cost": 7.75
+    },
+    {
+      "truth": "feature_leakage",
+      "planner": "cheapest",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.8611111111111112,
+      "cost": 6.75
+    },
+    {
+      "truth": "feature_leakage",
+      "planner": "max_eig",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.875,
+      "cost": 6.763888888888889
+    },
+    {
+      "truth": "feature_leakage",
+      "planner": "eig_per_cost",
+      "n": 72,
+      "top1": 0.875,
+      "f1": 0.8055555555555557,
+      "cost": 6.833333333333333
+    },
+    {
+      "truth": "feature_leakage",
+      "planner": "adaptive",
+      "n": 72,
+      "top1": 0.875,
+      "f1": 0.8055555555555557,
+      "cost": 6.833333333333333
+    },
+    {
+      "truth": "feature_leakage",
+      "planner": "lookahead2",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.875,
+      "cost": 6.75
+    },
+    {
+      "truth": "class_prior_shift",
+      "planner": "random",
+      "n": 72,
+      "top1": 0.6666666666666666,
+      "f1": 0.6111111111111112,
+      "cost": 7.600694444444445
+    },
+    {
+      "truth": "class_prior_shift",
+      "planner": "checklist",
+      "n": 72,
+      "top1": 0.7361111111111112,
+      "f1": 0.7314814814814815,
+      "cost": 7.75
+    },
+    {
+      "truth": "class_prior_shift",
+      "planner": "cheapest",
+      "n": 72,
+      "top1": 0.6388888888888888,
+      "f1": 0.6967592592592592,
+      "cost": 6.75
+    },
+    {
+      "truth": "class_prior_shift",
+      "planner": "max_eig",
+      "n": 72,
+      "top1": 0.7083333333333334,
+      "f1": 0.7314814814814815,
+      "cost": 6.694444444444445
+    },
+    {
+      "truth": "class_prior_shift",
+      "planner": "eig_per_cost",
+      "n": 72,
+      "top1": 0.7361111111111112,
+      "f1": 0.7314814814814815,
+      "cost": 6.513888888888889
+    },
+    {
+      "truth": "class_prior_shift",
+      "planner": "adaptive",
+      "n": 72,
+      "top1": 0.7361111111111112,
+      "f1": 0.7314814814814815,
+      "cost": 6.513888888888889
+    },
+    {
+      "truth": "class_prior_shift",
+      "planner": "lookahead2",
+      "n": 72,
+      "top1": 0.7361111111111112,
+      "f1": 0.7314814814814815,
+      "cost": 7.388888888888889
+    },
+    {
+      "truth": "pipeline_change",
+      "planner": "random",
+      "n": 72,
+      "top1": 0.5555555555555556,
+      "f1": 0.537037037037037,
+      "cost": 7.534722222222222
+    },
+    {
+      "truth": "pipeline_change",
+      "planner": "checklist",
+      "n": 72,
+      "top1": 0.9583333333333334,
+      "f1": 0.9398148148148147,
+      "cost": 7.75
+    },
+    {
+      "truth": "pipeline_change",
+      "planner": "cheapest",
+      "n": 72,
+      "top1": 0.3888888888888889,
+      "f1": 0.4166666666666667,
+      "cost": 6.75
+    },
+    {
+      "truth": "pipeline_change",
+      "planner": "max_eig",
+      "n": 72,
+      "top1": 0.9583333333333334,
+      "f1": 0.8657407407407409,
+      "cost": 7.097222222222222
+    },
+    {
+      "truth": "pipeline_change",
+      "planner": "eig_per_cost",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.9444444444444444,
+      "cost": 6.805555555555555
+    },
+    {
+      "truth": "pipeline_change",
+      "planner": "adaptive",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.9444444444444444,
+      "cost": 6.805555555555555
+    },
+    {
+      "truth": "pipeline_change",
+      "planner": "lookahead2",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.9398148148148147,
+      "cost": 6.763888888888889
+    },
+    {
+      "truth": "data_quality",
+      "planner": "random",
+      "n": 72,
+      "top1": 0.3888888888888889,
+      "f1": 0.33564814814814814,
+      "cost": 7.565972222222222
+    },
+    {
+      "truth": "data_quality",
+      "planner": "checklist",
+      "n": 72,
+      "top1": 0.6527777777777778,
+      "f1": 0.5787037037037037,
+      "cost": 7.75
+    },
+    {
+      "truth": "data_quality",
+      "planner": "cheapest",
+      "n": 72,
+      "top1": 0.5,
+      "f1": 0.4305555555555556,
+      "cost": 6.75
+    },
+    {
+      "truth": "data_quality",
+      "planner": "max_eig",
+      "n": 72,
+      "top1": 0.6527777777777778,
+      "f1": 0.5833333333333334,
+      "cost": 6.75
+    },
+    {
+      "truth": "data_quality",
+      "planner": "eig_per_cost",
+      "n": 72,
+      "top1": 0.6527777777777778,
+      "f1": 0.5833333333333334,
+      "cost": 6.75
+    },
+    {
+      "truth": "data_quality",
+      "planner": "adaptive",
+      "n": 72,
+      "top1": 0.6527777777777778,
+      "f1": 0.5833333333333334,
+      "cost": 6.75
+    },
+    {
+      "truth": "data_quality",
+      "planner": "lookahead2",
+      "n": 72,
+      "top1": 0.6527777777777778,
+      "f1": 0.5833333333333334,
+      "cost": 6.791666666666667
+    },
+    {
+      "truth": "metric_bug",
+      "planner": "random",
+      "n": 72,
+      "top1": 0.8333333333333334,
+      "f1": 0.8055555555555556,
+      "cost": 7.572916666666667
+    },
+    {
+      "truth": "metric_bug",
+      "planner": "checklist",
+      "n": 72,
+      "top1": 0.9305555555555556,
+      "f1": 0.9166666666666666,
+      "cost": 7.75
+    },
+    {
+      "truth": "metric_bug",
+      "planner": "cheapest",
+      "n": 72,
+      "top1": 0.9583333333333334,
+      "f1": 0.9166666666666666,
+      "cost": 6.75
+    },
+    {
+      "truth": "metric_bug",
+      "planner": "max_eig",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.8888888888888888,
+      "cost": 7.388888888888889
+    },
+    {
+      "truth": "metric_bug",
+      "planner": "eig_per_cost",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.8888888888888888,
+      "cost": 6.638888888888889
+    },
+    {
+      "truth": "metric_bug",
+      "planner": "adaptive",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.8888888888888888,
+      "cost": 6.638888888888889
+    },
+    {
+      "truth": "metric_bug",
+      "planner": "lookahead2",
+      "n": 72,
+      "top1": 0.9444444444444444,
+      "f1": 0.8888888888888888,
+      "cost": 7.416666666666667
+    }
+  ],
+  "by_dataset": [
+    {
+      "dataset": "synthetic_credit",
+      "planner": "random",
+      "n": 240,
+      "top1": 0.7370689655172413,
+      "f1": 0.6623611111111111,
+      "cost": 7.567708333333333
+    },
+    {
+      "dataset": "synthetic_credit",
+      "planner": "checklist",
+      "n": 240,
+      "top1": 0.8793103448275862,
+      "f1": 0.8159722222222221,
+      "cost": 7.75
+    },
+    {
+      "dataset": "synthetic_credit",
+      "planner": "cheapest",
+      "n": 240,
+      "top1": 0.7974137931034483,
+      "f1": 0.7172222222222222,
+      "cost": 6.75
+    },
+    {
+      "dataset": "synthetic_credit",
+      "planner": "max_eig",
+      "n": 240,
+      "top1": 0.9310344827586207,
+      "f1": 0.875,
+      "cost": 7.1125
+    },
+    {
+      "dataset": "synthetic_credit",
+      "planner": "eig_per_cost",
+      "n": 240,
+      "top1": 0.9439655172413793,
+      "f1": 0.8845833333333334,
+      "cost": 6.875
+    },
+    {
+      "dataset": "synthetic_credit",
+      "planner": "adaptive",
+      "n": 240,
+      "top1": 0.9439655172413793,
+      "f1": 0.8845833333333334,
+      "cost": 6.875
+    },
+    {
+      "dataset": "synthetic_credit",
+      "planner": "lookahead2",
+      "n": 240,
+      "top1": 0.9439655172413793,
+      "f1": 0.8783333333333334,
+      "cost": 7.129166666666666
+    },
+    {
+      "dataset": "synthetic_churn",
+      "planner": "random",
+      "n": 240,
+      "top1": 0.7801724137931034,
+      "f1": 0.7173611111111111,
+      "cost": 7.614583333333333
+    },
+    {
+      "dataset": "synthetic_churn",
+      "planner": "checklist",
+      "n": 240,
+      "top1": 0.9224137931034483,
+      "f1": 0.8444444444444446,
+      "cost": 7.75
+    },
+    {
+      "dataset": "synthetic_churn",
+      "planner": "cheapest",
+      "n": 240,
+      "top1": 0.7974137931034483,
+      "f1": 0.6715277777777778,
+      "cost": 6.75
+    },
+    {
+      "dataset": "synthetic_churn",
+      "planner": "max_eig",
+      "n": 240,
+      "top1": 0.9612068965517241,
+      "f1": 0.9125,
+      "cost": 6.970833333333333
+    },
+    {
+      "dataset": "synthetic_churn",
+      "planner": "eig_per_cost",
+      "n": 240,
+      "top1": 0.9310344827586207,
+      "f1": 0.8895833333333333,
+      "cost": 6.775
+    },
+    {
+      "dataset": "synthetic_churn",
+      "planner": "adaptive",
+      "n": 240,
+      "top1": 0.9310344827586207,
+      "f1": 0.8895833333333333,
+      "cost": 6.775
+    },
+    {
+      "dataset": "synthetic_churn",
+      "planner": "lookahead2",
+      "n": 240,
+      "top1": 0.9525862068965517,
+      "f1": 0.9104166666666667,
+      "cost": 7.116666666666666
+    },
+    {
+      "dataset": "breast_cancer",
+      "planner": "random",
+      "n": 240,
+      "top1": 0.5775862068965517,
+      "f1": 0.4379166666666667,
+      "cost": 7.555208333333334
+    },
+    {
+      "dataset": "breast_cancer",
+      "planner": "checklist",
+      "n": 240,
+      "top1": 0.5818965517241379,
+      "f1": 0.5540277777777778,
+      "cost": 7.75
+    },
+    {
+      "dataset": "breast_cancer",
+      "planner": "cheapest",
+      "n": 240,
+      "top1": 0.6336206896551724,
+      "f1": 0.4872222222222222,
+      "cost": 6.75
+    },
+    {
+      "dataset": "breast_cancer",
+      "planner": "max_eig",
+      "n": 240,
+      "top1": 0.6637931034482759,
+      "f1": 0.5443055555555555,
+      "cost": 6.933333333333334
+    },
+    {
+      "dataset": "breast_cancer",
+      "planner": "eig_per_cost",
+      "n": 240,
+      "top1": 0.6724137931034483,
+      "f1": 0.5486111111111112,
+      "cost": 6.770833333333333
+    },
+    {
+      "dataset": "breast_cancer",
+      "planner": "adaptive",
+      "n": 240,
+      "top1": 0.6724137931034483,
+      "f1": 0.5486111111111112,
+      "cost": 6.770833333333333
+    },
+    {
+      "dataset": "breast_cancer",
+      "planner": "lookahead2",
+      "n": 240,
+      "top1": 0.6724137931034483,
+      "f1": 0.5472222222222222,
+      "cost": 6.7625
+    }
+  ],
+  "noisy_or_validation": {
+    "n": 1920,
+    "mean_loglik_noisy_or": -0.4294669667137526,
+    "mean_loglik_single_cause_mixture": -0.6714218030463904
+  },
+  "accuracy_vs_budget": [
+    {
+      "planner": "random",
+      "budget": 1,
+      "top1": 0.40086206896551724,
+      "top1_lo": 0.36637931034482757,
+      "top1_hi": 0.4367816091954023,
+      "f1": 0.2125,
+      "f1_lo": 0.18425925925925923,
+      "f1_hi": 0.24027777777777778,
+      "mean_cost": 0.8774305555555556
+    },
+    {
+      "planner": "checklist",
+      "budget": 1,
+      "top1": 0.46120689655172414,
+      "top1_lo": 0.42528735632183906,
+      "top1_hi": 0.49712643678160917,
+      "f1": 0.2569444444444444,
+      "f1_lo": 0.2263888888888889,
+      "f1_hi": 0.2865856481481481,
+      "mean_cost": 0.75
+    },
+    {
+      "planner": "cheapest",
+      "budget": 1,
+      "top1": 0.46120689655172414,
+      "top1_lo": 0.42528735632183906,
+      "top1_hi": 0.49712643678160917,
+      "f1": 0.2569444444444444,
+      "f1_lo": 0.2263888888888889,
+      "f1_hi": 0.2865856481481481,
+      "mean_cost": 0.75
+    },
+    {
+      "planner": "max_eig",
+      "budget": 1,
+      "top1": 0.36063218390804597,
+      "top1_lo": 0.32755028735632186,
+      "top1_hi": 0.39655172413793105,
+      "f1": 0.23333333333333334,
+      "f1_lo": 0.20553240740740739,
+      "f1_hi": 0.26251157407407405,
+      "mean_cost": 1.0
+    },
+    {
+      "planner": "eig_per_cost",
+      "budget": 1,
+      "top1": 0.46120689655172414,
+      "top1_lo": 0.42528735632183906,
+      "top1_hi": 0.49712643678160917,
+      "f1": 0.2569444444444444,
+      "f1_lo": 0.2263888888888889,
+      "f1_hi": 0.2865856481481481,
+      "mean_cost": 0.75
+    },
+    {
+      "planner": "adaptive",
+      "budget": 1,
+      "top1": 0.46120689655172414,
+      "top1_lo": 0.42528735632183906,
+      "top1_hi": 0.49712643678160917,
+      "f1": 0.2569444444444444,
+      "f1_lo": 0.2263888888888889,
+      "f1_hi": 0.2865856481481481,
+      "mean_cost": 0.75
+    },
+    {
+      "planner": "lookahead2",
+      "budget": 1,
+      "top1": 0.46120689655172414,
+      "top1_lo": 0.42528735632183906,
+      "top1_hi": 0.49712643678160917,
+      "f1": 0.2569444444444444,
+      "f1_lo": 0.2263888888888889,
+      "f1_hi": 0.2865856481481481,
+      "mean_cost": 0.75
+    },
+    {
+      "planner": "random",
+      "budget": 2,
+      "top1": 0.41810344827586204,
+      "top1_lo": 0.38362068965517243,
+      "top1_hi": 0.45545977011494254,
+      "f1": 0.2532407407407407,
+      "f1_lo": 0.22546296296296295,
+      "f1_hi": 0.2842592592592592,
+      "mean_cost": 1.8944444444444444
+    },
+    {
+      "planner": "checklist",
+      "budget": 2,
+      "top1": 0.5531609195402298,
+      "top1_lo": 0.5172413793103449,
+      "top1_hi": 0.5905172413793104,
+      "f1": 0.42731481481481476,
+      "f1_lo": 0.3955844907407408,
+      "f1_hi": 0.45856481481481476,
+      "mean_cost": 1.75
+    },
+    {
+      "planner": "cheapest",
+      "budget": 2,
+      "top1": 0.5531609195402298,
+      "top1_lo": 0.5172413793103449,
+      "top1_hi": 0.5905172413793104,
+      "f1": 0.42731481481481476,
+      "f1_lo": 0.3955844907407408,
+      "f1_hi": 0.45856481481481476,
+      "mean_cost": 1.75
+    },
+    {
+      "planner": "max_eig",
+      "budget": 2,
+      "top1": 0.5531609195402298,
+      "top1_lo": 0.5172413793103449,
+      "top1_hi": 0.5905172413793104,
+      "f1": 0.42731481481481476,
+      "f1_lo": 0.3955844907407408,
+      "f1_hi": 0.45856481481481476,
+      "mean_cost": 1.75
+    },
+    {
+      "planner": "eig_per_cost",
+      "budget": 2,
+      "top1": 0.5531609195402298,
+      "top1_lo": 0.5172413793103449,
+      "top1_hi": 0.5905172413793104,
+      "f1": 0.42731481481481476,
+      "f1_lo": 0.3955844907407408,
+      "f1_hi": 0.45856481481481476,
+      "mean_cost": 1.75
+    },
+    {
+      "planner": "adaptive",
+      "budget": 2,
+      "top1": 0.5531609195402298,
+      "top1_lo": 0.5172413793103449,
+      "top1_hi": 0.5905172413793104,
+      "f1": 0.42731481481481476,
+      "f1_lo": 0.3955844907407408,
+      "f1_hi": 0.45856481481481476,
+      "mean_cost": 1.75
+    },
+    {
+      "planner": "lookahead2",
+      "budget": 2,
+      "top1": 0.5531609195402298,
+      "top1_lo": 0.5172413793103449,
+      "top1_hi": 0.5905172413793104,
+      "f1": 0.42731481481481476,
+      "f1_lo": 0.3955844907407408,
+      "f1_hi": 0.45856481481481476,
+      "mean_cost": 1.75
+    },
+    {
+      "planner": "random",
+      "budget": 3,
+      "top1": 0.5114942528735632,
+      "top1_lo": 0.47413793103448276,
+      "top1_hi": 0.5488505747126436,
+      "f1": 0.37222222222222223,
+      "f1_lo": 0.3405034722222222,
+      "f1_hi": 0.40370949074074075,
+      "mean_cost": 2.8666666666666667
+    },
+    {
+      "planner": "checklist",
+      "budget": 3,
+      "top1": 0.6163793103448276,
+      "top1_lo": 0.5818965517241379,
+      "top1_hi": 0.6537356321839081,
+      "f1": 0.5212962962962963,
+      "f1_lo": 0.4891030092592592,
+      "f1_hi": 0.5532465277777778,
+      "mean_cost": 2.75
+    },
+    {
+      "planner": "cheapest",
+      "budget": 3,
+      "top1": 0.6163793103448276,
+      "top1_lo": 0.5818965517241379,
+      "top1_hi": 0.6537356321839081,
+      "f1": 0.5212962962962963,
+      "f1_lo": 0.4891030092592592,
+      "f1_hi": 0.5532465277777778,
+      "mean_cost": 2.75
+    },
+    {
+      "planner": "max_eig",
+      "budget": 3,
+      "top1": 0.6666666666666666,
+      "top1_lo": 0.632183908045977,
+      "top1_hi": 0.7011853448275862,
+      "f1": 0.5564814814814815,
+      "f1_lo": 0.5259259259259259,
+      "f1_hi": 0.5875231481481481,
+      "mean_cost": 2.917013888888889
+    },
+    {
+      "planner": "eig_per_cost",
+      "budget": 3,
+      "top1": 0.6163793103448276,
+      "top1_lo": 0.5818965517241379,
+      "top1_hi": 0.6537356321839081,
+      "f1": 0.5212962962962963,
+      "f1_lo": 0.4891030092592592,
+      "f1_hi": 0.5532465277777778,
+      "mean_cost": 2.75
+    },
+    {
+      "planner": "adaptive",
+      "budget": 3,
+      "top1": 0.6163793103448276,
+      "top1_lo": 0.5818965517241379,
+      "top1_hi": 0.6537356321839081,
+      "f1": 0.5212962962962963,
+      "f1_lo": 0.4891030092592592,
+      "f1_hi": 0.5532465277777778,
+      "mean_cost": 2.75
+    },
+    {
+      "planner": "lookahead2",
+      "budget": 3,
+      "top1": 0.6163793103448276,
+      "top1_lo": 0.5818965517241379,
+      "top1_hi": 0.6537356321839081,
+      "f1": 0.5212962962962963,
+      "f1_lo": 0.4891030092592592,
+      "f1_hi": 0.5532465277777778,
+      "mean_cost": 2.75
+    },
+    {
+      "planner": "random",
+      "budget": 4,
+      "top1": 0.5560344827586207,
+      "top1_lo": 0.521551724137931,
+      "top1_hi": 0.5933908045977011,
+      "f1": 0.40291666666666665,
+      "f1_lo": 0.3711979166666667,
+      "f1_hi": 0.4354456018518518,
+      "mean_cost": 3.7934027777777777
+    },
+    {
+      "planner": "checklist",
+      "budget": 4,
+      "top1": 0.6163793103448276,
+      "top1_lo": 0.5818965517241379,
+      "top1_hi": 0.6537356321839081,
+      "f1": 0.5212962962962963,
+      "f1_lo": 0.4891030092592592,
+      "f1_hi": 0.5532465277777778,
+      "mean_cost": 2.75
+    },
+    {
+      "planner": "cheapest",
+      "budget": 4,
+      "top1": 0.6163793103448276,
+      "top1_lo": 0.5818965517241379,
+      "top1_hi": 0.6537356321839081,
+      "f1": 0.5212962962962963,
+      "f1_lo": 0.4891030092592592,
+      "f1_hi": 0.5532465277777778,
+      "mean_cost": 2.75
+    },
+    {
+      "planner": "max_eig",
+      "budget": 4,
+      "top1": 0.7485632183908046,
+      "top1_lo": 0.7169540229885057,
+      "top1_hi": 0.7801724137931034,
+      "f1": 0.6300925925925926,
+      "f1_lo": 0.5999826388888889,
+      "f1_hi": 0.6581018518518518,
+      "mean_cost": 3.75
+    },
+    {
+      "planner": "eig_per_cost",
+      "budget": 4,
+      "top1": 0.7241379310344828,
+      "top1_lo": 0.6910919540229885,
+      "top1_hi": 0.7543103448275862,
+      "f1": 0.6023148148148147,
+      "f1_lo": 0.5715219907407407,
+      "f1_hi": 0.6326388888888889,
+      "mean_cost": 3.4180555555555556
+    },
+    {
+      "planner": "adaptive",
+      "budget": 4,
+      "top1": 0.7241379310344828,
+      "top1_lo": 0.6910919540229885,
+      "top1_hi": 0.7543103448275862,
+      "f1": 0.6023148148148147,
+      "f1_lo": 0.5715219907407407,
+      "f1_hi": 0.6326388888888889,
+      "mean_cost": 3.4180555555555556
+    },
+    {
+      "planner": "lookahead2",
+      "budget": 4,
+      "top1": 0.7241379310344828,
+      "top1_lo": 0.6910919540229885,
+      "top1_hi": 0.7543103448275862,
+      "f1": 0.6023148148148147,
+      "f1_lo": 0.5715219907407407,
+      "f1_hi": 0.6326388888888889,
+      "mean_cost": 3.4180555555555556
+    },
+    {
+      "planner": "random",
+      "budget": 6,
+      "top1": 0.6192528735632183,
+      "top1_lo": 0.5833333333333334,
+      "top1_hi": 0.6537356321839081,
+      "f1": 0.4975462962962963,
+      "f1_lo": 0.4650902777777778,
+      "f1_hi": 0.5318981481481481,
+      "mean_cost": 5.689583333333333
+    },
+    {
+      "planner": "checklist",
+      "budget": 6,
+      "top1": 0.735632183908046,
+      "top1_lo": 0.7040229885057471,
+      "top1_hi": 0.7672413793103449,
+      "f1": 0.64375,
+      "f1_lo": 0.6122627314814815,
+      "f1_hi": 0.6747685185185185,
+      "mean_cost": 4.75
+    },
+    {
+      "planner": "cheapest",
+      "budget": 6,
+      "top1": 0.6235632183908046,
+      "top1_lo": 0.5890804597701149,
+      "top1_hi": 0.6594827586206896,
+      "f1": 0.5356018518518518,
+      "f1_lo": 0.5039236111111112,
+      "f1_hi": 0.5665763888888888,
+      "mean_cost": 4.75
+    },
+    {
+      "planner": "max_eig",
+      "budget": 6,
+      "top1": 0.8290229885057471,
+      "top1_lo": 0.8031609195402298,
+      "top1_hi": 0.8548850574712644,
+      "f1": 0.705462962962963,
+      "f1_lo": 0.6767523148148148,
+      "f1_hi": 0.732778935185185,
+      "mean_cost": 5.5875
+    },
+    {
+      "planner": "eig_per_cost",
+      "budget": 6,
+      "top1": 0.7658045977011494,
+      "top1_lo": 0.7370330459770115,
+      "top1_hi": 0.7988505747126436,
+      "f1": 0.6930555555555555,
+      "f1_lo": 0.6638831018518518,
+      "f1_hi": 0.7236226851851851,
+      "mean_cost": 5.402777777777778
+    },
+    {
+      "planner": "adaptive",
+      "budget": 6,
+      "top1": 0.7658045977011494,
+      "top1_lo": 0.7370330459770115,
+      "top1_hi": 0.7988505747126436,
+      "f1": 0.6930555555555555,
+      "f1_lo": 0.6638831018518518,
+      "f1_hi": 0.7236226851851851,
+      "mean_cost": 5.402777777777778
+    },
+    {
+      "planner": "lookahead2",
+      "budget": 6,
+      "top1": 0.7859195402298851,
+      "top1_lo": 0.7543103448275862,
+      "top1_hi": 0.8160919540229885,
+      "f1": 0.6925925925925925,
+      "f1_lo": 0.6650231481481481,
+      "f1_hi": 0.7233796296296295,
+      "mean_cost": 4.913888888888889
+    },
+    {
+      "planner": "random",
+      "budget": 8,
+      "top1": 0.6982758620689655,
+      "top1_lo": 0.6651939655172414,
+      "top1_hi": 0.7327586206896551,
+      "f1": 0.6058796296296296,
+      "f1_lo": 0.575537037037037,
+      "f1_hi": 0.6369652777777778,
+      "mean_cost": 7.582638888888889
+    },
+    {
+      "planner": "checklist",
+      "budget": 8,
+      "top1": 0.7945402298850575,
+      "top1_lo": 0.7658045977011494,
+      "top1_hi": 0.8233117816091954,
+      "f1": 0.7381481481481482,
+      "f1_lo": 0.7101377314814815,
+      "f1_hi": 0.7674664351851851,
+      "mean_cost": 7.75
+    },
+    {
+      "planner": "cheapest",
+      "budget": 8,
+      "top1": 0.742816091954023,
+      "top1_lo": 0.7112068965517241,
+      "top1_hi": 0.7772988505747126,
+      "f1": 0.6253240740740741,
+      "f1_lo": 0.5932754629629631,
+      "f1_hi": 0.6552326388888888,
+      "mean_cost": 6.75
+    },
+    {
+      "planner": "max_eig",
+      "budget": 8,
+      "top1": 0.853448275862069,
+      "top1_lo": 0.8275862068965517,
+      "top1_hi": 0.8793103448275862,
+      "f1": 0.7825925925925925,
+      "f1_lo": 0.7562951388888891,
+      "f1_hi": 0.8088067129629629,
+      "mean_cost": 7.15
+    },
+    {
+      "planner": "eig_per_cost",
+      "budget": 8,
+      "top1": 0.8563218390804598,
+      "top1_lo": 0.8304597701149425,
+      "top1_hi": 0.8807471264367817,
+      "f1": 0.7812037037037036,
+      "f1_lo": 0.7549525462962963,
+      "f1_hi": 0.8089826388888889,
+      "mean_cost": 7.034722222222222
+    },
+    {
+      "planner": "adaptive",
+      "budget": 8,
+      "top1": 0.8563218390804598,
+      "top1_lo": 0.8304597701149425,
+      "top1_hi": 0.8807471264367817,
+      "f1": 0.7812037037037036,
+      "f1_lo": 0.7549525462962963,
+      "f1_hi": 0.8089826388888889,
+      "mean_cost": 7.034722222222222
+    },
+    {
+      "planner": "lookahead2",
+      "budget": 8,
+      "top1": 0.8563218390804598,
+      "top1_lo": 0.8304597701149425,
+      "top1_hi": 0.8807471264367817,
+      "f1": 0.7786574074074072,
+      "f1_lo": 0.7523993055555556,
+      "f1_hi": 0.8069548611111111,
+      "mean_cost": 7.002777777777778
+    },
+    {
+      "planner": "random",
+      "budget": 12,
+      "top1": 0.8275862068965517,
+      "top1_lo": 0.7988505747126436,
+      "top1_hi": 0.8577586206896551,
+      "f1": 0.7538425925925926,
+      "f1_lo": 0.7270324074074074,
+      "f1_hi": 0.7821770833333334,
+      "mean_cost": 11.591666666666667
+    },
+    {
+      "planner": "checklist",
+      "budget": 12,
+      "top1": 0.8663793103448276,
+      "top1_lo": 0.8405172413793104,
+      "top1_hi": 0.8922413793103449,
+      "f1": 0.791111111111111,
+      "f1_lo": 0.7649953703703702,
+      "f1_hi": 0.8171319444444444,
+      "mean_cost": 11.75
+    },
+    {
+      "planner": "cheapest",
+      "budget": 12,
+      "top1": 0.8318965517241379,
+      "top1_lo": 0.8031609195402298,
+      "top1_hi": 0.8591954022988506,
+      "f1": 0.7172222222222222,
+      "f1_lo": 0.688412037037037,
+      "f1_hi": 0.7442673611111109,
+      "mean_cost": 10.75
+    },
+    {
+      "planner": "max_eig",
+      "budget": 12,
+      "top1": 0.8663793103448276,
+      "top1_lo": 0.8405172413793104,
+      "top1_hi": 0.8922413793103449,
+      "f1": 0.7877777777777778,
+      "f1_lo": 0.7627245370370369,
+      "f1_hi": 0.8136631944444445,
+      "mean_cost": 11.731944444444444
+    },
+    {
+      "planner": "eig_per_cost",
+      "budget": 12,
+      "top1": 0.8663793103448276,
+      "top1_lo": 0.8405172413793104,
+      "top1_hi": 0.8922413793103449,
+      "f1": 0.7887037037037037,
+      "f1_lo": 0.7634699074074075,
+      "f1_hi": 0.815050925925926,
+      "mean_cost": 11.169444444444444
+    },
+    {
+      "planner": "adaptive",
+      "budget": 12,
+      "top1": 0.8663793103448276,
+      "top1_lo": 0.8405172413793104,
+      "top1_hi": 0.8922413793103449,
+      "f1": 0.7887037037037037,
+      "f1_lo": 0.7634699074074075,
+      "f1_hi": 0.815050925925926,
+      "mean_cost": 11.169444444444444
+    },
+    {
+      "planner": "lookahead2",
+      "budget": 12,
+      "top1": 0.8663793103448276,
+      "top1_lo": 0.8405172413793104,
+      "top1_hi": 0.8922413793103449,
+      "f1": 0.7887037037037037,
+      "f1_lo": 0.7634699074074075,
+      "f1_hi": 0.815050925925926,
+      "mean_cost": 11.295833333333333
+    },
+    {
+      "planner": "random",
+      "budget": 18,
+      "top1": 0.875,
+      "top1_lo": 0.8505387931034483,
+      "top1_hi": 0.8994252873563219,
+      "f1": 0.788287037037037,
+      "f1_lo": 0.7627314814814816,
+      "f1_hi": 0.8144016203703703,
+      "mean_cost": 13.75
+    },
+    {
+      "planner": "checklist",
+      "budget": 18,
+      "top1": 0.875,
+      "top1_lo": 0.8505387931034483,
+      "top1_hi": 0.8994252873563219,
+      "f1": 0.788287037037037,
+      "f1_lo": 0.7627314814814816,
+      "f1_hi": 0.8144016203703703,
+      "mean_cost": 13.75
+    },
+    {
+      "planner": "cheapest",
+      "budget": 18,
+      "top1": 0.875,
+      "top1_lo": 0.8505387931034483,
+      "top1_hi": 0.8994252873563219,
+      "f1": 0.788287037037037,
+      "f1_lo": 0.7627314814814816,
+      "f1_hi": 0.8144016203703703,
+      "mean_cost": 13.75
+    },
+    {
+      "planner": "max_eig",
+      "budget": 18,
+      "top1": 0.8793103448275862,
+      "top1_lo": 0.8548850574712644,
+      "top1_hi": 0.9023347701149425,
+      "f1": 0.7794907407407408,
+      "f1_lo": 0.7533761574074075,
+      "f1_hi": 0.8058796296296297,
+      "mean_cost": 15.618055555555555
+    },
+    {
+      "planner": "eig_per_cost",
+      "budget": 18,
+      "top1": 0.8692528735632183,
+      "top1_lo": 0.8433908045977011,
+      "top1_hi": 0.8936781609195402,
+      "f1": 0.7833333333333333,
+      "f1_lo": 0.757261574074074,
+      "f1_hi": 0.8091701388888889,
+      "mean_cost": 13.030555555555555
+    },
+    {
+      "planner": "adaptive",
+      "budget": 18,
+      "top1": 0.8649425287356322,
+      "top1_lo": 0.8390804597701149,
+      "top1_hi": 0.8908045977011494,
+      "f1": 0.7896759259259258,
+      "f1_lo": 0.7642118055555557,
+      "f1_hi": 0.8158888888888888,
+      "mean_cost": 11.786111111111111
+    },
+    {
+      "planner": "lookahead2",
+      "budget": 18,
+      "top1": 0.8764367816091954,
+      "top1_lo": 0.8519755747126437,
+      "top1_hi": 0.9008620689655172,
+      "f1": 0.788287037037037,
+      "f1_lo": 0.7627314814814816,
+      "f1_hi": 0.8144016203703703,
+      "mean_cost": 12.9
+    }
+  ],
+  "robustness": [
+    {
+      "sigma": 0.0,
+      "planner": "adaptive",
+      "top1": 0.8491379310344828,
+      "f1": 0.7742592592592591,
+      "cost": 6.8069444444444445,
+      "brier": 0.06462941381427852
+    },
+    {
+      "sigma": 0.0,
+      "planner": "checklist",
+      "top1": 0.7945402298850575,
+      "f1": 0.7381481481481482,
+      "cost": 7.75,
+      "brier": 0.06941593106192544
+    },
+    {
+      "sigma": 0.0,
+      "planner": "random",
+      "top1": 0.6982758620689655,
+      "f1": 0.6058796296296296,
+      "cost": 7.579166666666667,
+      "brier": 0.08709561524362226
+    },
+    {
+      "sigma": 0.5,
+      "planner": "adaptive",
+      "top1": 0.8290229885057471,
+      "f1": 0.743287037037037,
+      "cost": 6.956944444444445,
+      "brier": 0.07016798677091454
+    },
+    {
+      "sigma": 0.5,
+      "planner": "checklist",
+      "top1": 0.7787356321839081,
+      "f1": 0.722361111111111,
+      "cost": 7.75,
+      "brier": 0.07331704414445266
+    },
+    {
+      "sigma": 0.5,
+      "planner": "random",
+      "top1": 0.6824712643678161,
+      "f1": 0.5934722222222223,
+      "cost": 7.576388888888889,
+      "brier": 0.09207577876007618
+    },
+    {
+      "sigma": 1.0,
+      "planner": "adaptive",
+      "top1": 0.7931034482758621,
+      "f1": 0.7063425925925926,
+      "cost": 6.916666666666667,
+      "brier": 0.08103560990520457
+    },
+    {
+      "sigma": 1.0,
+      "planner": "checklist",
+      "top1": 0.7614942528735632,
+      "f1": 0.6941203703703703,
+      "cost": 7.738888888888889,
+      "brier": 0.08127912114518947
+    },
+    {
+      "sigma": 1.0,
+      "planner": "random",
+      "top1": 0.6522988505747126,
+      "f1": 0.55375,
+      "cost": 7.571527777777778,
+      "brier": 0.10034082805785659
+    },
+    {
+      "sigma": 1.5,
+      "planner": "adaptive",
+      "top1": 0.735632183908046,
+      "f1": 0.6616203703703704,
+      "cost": 6.834722222222222,
+      "brier": 0.09461215979011867
+    },
+    {
+      "sigma": 1.5,
+      "planner": "checklist",
+      "top1": 0.7255747126436781,
+      "f1": 0.6591666666666667,
+      "cost": 7.686111111111111,
+      "brier": 0.09143331232577737
+    },
+    {
+      "sigma": 1.5,
+      "planner": "random",
+      "top1": 0.610632183908046,
+      "f1": 0.5217592592592593,
+      "cost": 7.561805555555556,
+      "brier": 0.11113415559610093
+    }
+  ],
+  "stop_reasons": [
+    {
+      "planner": "adaptive",
+      "stop": "budget_insufficient",
+      "n": 613
+    },
+    {
+      "planner": "adaptive",
+      "stop": "confidence_reached",
+      "n": 107
+    },
+    {
+      "planner": "cheapest",
+      "stop": "budget_insufficient",
+      "n": 720
+    },
+    {
+      "planner": "checklist",
+      "stop": "budget_insufficient",
+      "n": 586
+    },
+    {
+      "planner": "checklist",
+      "stop": "confidence_reached",
+      "n": 134
+    },
+    {
+      "planner": "eig_per_cost",
+      "stop": "budget_insufficient",
+      "n": 613
+    },
+    {
+      "planner": "eig_per_cost",
+      "stop": "confidence_reached",
+      "n": 107
+    },
+    {
+      "planner": "lookahead2",
+      "stop": "budget_insufficient",
+      "n": 626
+    },
+    {
+      "planner": "lookahead2",
+      "stop": "confidence_reached",
+      "n": 94
+    },
+    {
+      "planner": "max_eig",
+      "stop": "budget_insufficient",
+      "n": 620
+    },
+    {
+      "planner": "max_eig",
+      "stop": "confidence_reached",
+      "n": 100
+    },
+    {
+      "planner": "random",
+      "stop": "budget_insufficient",
+      "n": 690
+    },
+    {
+      "planner": "random",
+      "stop": "confidence_reached",
+      "n": 30
+    }
+  ],
+  "unseen_dataset": {
+    "dataset": "breast_cancer",
+    "summary": [
+      {
+        "planner": "random",
+        "label": "Random feasible",
+        "n_runs": 240,
+        "top1": 0.5775862068965517,
+        "top1_lo": 0.5172413793103449,
+        "top1_hi": 0.6379310344827587,
+        "top3": 0.875,
+        "top3_lo": 0.8360991379310344,
+        "top3_hi": 0.9181034482758621,
+        "precision": 0.4513888888888889,
+        "precision_lo": 0.39791666666666664,
+        "precision_hi": 0.5069618055555555,
+        "recall": 0.46875,
+        "recall_lo": 0.41041666666666665,
+        "recall_hi": 0.525,
+        "f1": 0.4379166666666667,
+        "f1_lo": 0.38693750000000005,
+        "f1_hi": 0.4898819444444444,
+        "exact": 0.225,
+        "exact_lo": 0.17083333333333334,
+        "exact_hi": 0.2791666666666667,
+        "brier": 0.12532843872274976,
+        "brier_lo": 0.11591477851306996,
+        "brier_hi": 0.13568818110967307,
+        "cost": 7.555208333333334,
+        "cost_lo": 7.498932291666667,
+        "cost_hi": 7.613541666666666,
+        "n_experiments": 5.633333333333334,
+        "n_experiments_lo": 5.55,
+        "n_experiments_hi": 5.716666666666667,
+        "risk_total": 0.049166666666666664,
+        "risk_total_lo": 0.04291666666666667,
+        "risk_total_hi": 0.055833333333333325,
+        "risk_violations": 0.0,
+        "risk_violations_lo": 0.0,
+        "risk_violations_hi": 0.0,
+        "stopped_confident": 0.0125
+      },
+      {
+        "planner": "checklist",
+        "label": "Fixed checklist",
+        "n_runs": 240,
+        "top1": 0.5818965517241379,
+        "top1_lo": 0.5171336206896552,
+        "top1_hi": 0.646551724137931,
+        "top3": 0.9008620689655172,
+        "top3_lo": 0.8620689655172413,
+        "top3_hi": 0.9396551724137931,
+        "precision": 0.5694444444444444,
+        "precision_lo": 0.51109375,
+        "precision_hi": 0.6243229166666665,
+        "recall": 0.5708333333333333,
+        "recall_lo": 0.5083333333333333,
+        "recall_hi": 0.6270833333333333,
+        "f1": 0.5540277777777778,
+        "f1_lo": 0.4978958333333333,
+        "f1_hi": 0.60653125,
+        "exact": 0.4083333333333333,
+        "exact_lo": 0.35,
+        "exact_hi": 0.4666666666666667,
+        "brier": 0.12441242331856156,
+        "brier_lo": 0.11145914093251914,
+        "brier_hi": 0.13845657074621545,
+        "cost": 7.75,
+        "cost_lo": 7.75,
+        "cost_hi": 7.75,
+        "n_experiments": 6.0,
+        "n_experiments_lo": 6.0,
+        "n_experiments_hi": 6.0,
+        "risk_total": 0.10000000000000002,
+        "risk_total_lo": 0.10000000000000002,
+        "risk_total_hi": 0.10000000000000002,
+        "risk_violations": 0.0,
+        "risk_violations_lo": 0.0,
+        "risk_violations_hi": 0.0,
+        "stopped_confident": 0.14583333333333334
+      },
+      {
+        "planner": "cheapest",
+        "label": "Cheapest first",
+        "n_runs": 240,
+        "top1": 0.6336206896551724,
+        "top1_lo": 0.5732758620689655,
+        "top1_hi": 0.6939655172413793,
+        "top3": 0.8448275862068966,
+        "top3_lo": 0.7974137931034483,
+        "top3_hi": 0.8879310344827587,
+        "precision": 0.48611111111111105,
+        "precision_lo": 0.4332986111111111,
+        "precision_hi": 0.5395833333333333,
+        "recall": 0.5416666666666666,
+        "recall_lo": 0.4875,
+        "recall_hi": 0.5979166666666667,
+        "f1": 0.4872222222222222,
+        "f1_lo": 0.43874652777777773,
+        "f1_hi": 0.538611111111111,
+        "exact": 0.2375,
+        "exact_lo": 0.1875,
+        "exact_hi": 0.2916666666666667,
+        "brier": 0.1301070482626751,
+        "brier_lo": 0.12016213572896171,
+        "brier_hi": 0.1406113270737768,
+        "cost": 6.75,
+        "cost_lo": 6.75,
+        "cost_hi": 6.75,
+        "n_experiments": 6.0,
+        "n_experiments_lo": 6.0,
+        "n_experiments_hi": 6.0,
+        "risk_total": 0.0,
+        "risk_total_lo": 0.0,
+        "risk_total_hi": 0.0,
+        "risk_violations": 0.0,
+        "risk_violations_lo": 0.0,
+        "risk_violations_hi": 0.0,
+        "stopped_confident": 0.0
+      },
+      {
+        "planner": "max_eig",
+        "label": "Max information gain",
+        "n_runs": 240,
+        "top1": 0.6637931034482759,
+        "top1_lo": 0.603448275862069,
+        "top1_hi": 0.7241379310344828,
+        "top3": 0.9310344827586207,
+        "top3_lo": 0.896551724137931,
+        "top3_hi": 0.9612068965517241,
+        "precision": 0.5569444444444444,
+        "precision_lo": 0.5034375,
+        "precision_hi": 0.6076736111111111,
+        "recall": 0.58125,
+        "recall_lo": 0.5249479166666667,
+        "recall_hi": 0.6354166666666666,
+        "f1": 0.5443055555555555,
+        "f1_lo": 0.4916284722222222,
+        "f1_hi": 0.5922361111111111,
+        "exact": 0.31666666666666665,
+        "exact_lo": 0.25833333333333336,
+        "exact_hi": 0.37510416666666657,
+        "brier": 0.12161823357532989,
+        "brier_lo": 0.11023777666504238,
+        "brier_hi": 0.13382928977575292,
+        "cost": 6.933333333333334,
+        "cost_lo": 6.887395833333334,
+        "cost_hi": 6.9875,
+        "n_experiments": 5.991666666666666,
+        "n_experiments_lo": 5.979166666666667,
+        "n_experiments_hi": 6.0,
+        "risk_total": 0.09791666666666668,
+        "risk_total_lo": 0.09583333333333334,
+        "risk_total_hi": 0.09958333333333336,
+        "risk_violations": 0.0,
+        "risk_violations_lo": 0.0,
+        "risk_violations_hi": 0.0,
+        "stopped_confident": 0.008333333333333333
+      },
+      {
+        "planner": "eig_per_cost",
+        "label": "Information gain per cost",
+        "n_runs": 240,
+        "top1": 0.6724137931034483,
+        "top1_lo": 0.6120689655172413,
+        "top1_hi": 0.7327586206896551,
+        "top3": 0.9267241379310345,
+        "top3_lo": 0.8922413793103449,
+        "top3_hi": 0.9568965517241379,
+        "precision": 0.5666666666666667,
+        "precision_lo": 0.5103645833333333,
+        "precision_hi": 0.61671875,
+        "recall": 0.5770833333333333,
+        "recall_lo": 0.5208333333333334,
+        "recall_hi": 0.6291666666666667,
+        "f1": 0.5486111111111112,
+        "f1_lo": 0.49513888888888885,
+        "f1_hi": 0.5958333333333333,
+        "exact": 0.3375,
+        "exact_lo": 0.275,
+        "exact_hi": 0.3959374999999999,
+        "brier": 0.12325915824893521,
+        "brier_lo": 0.11225610789772811,
+        "brier_hi": 0.13549119819764302,
+        "cost": 6.770833333333333,
+        "cost_lo": 6.75,
+        "cost_hi": 6.791666666666667,
+        "n_experiments": 5.995833333333334,
+        "n_experiments_lo": 5.983333333333333,
+        "n_experiments_hi": 6.0,
+        "risk_total": 0.09958333333333336,
+        "risk_total_lo": 0.09833333333333336,
+        "risk_total_hi": 0.10000000000000002,
+        "risk_violations": 0.0,
+        "risk_violations_lo": 0.0,
+        "risk_violations_hi": 0.0,
+        "stopped_confident": 0.004166666666666667
+      },
+      {
+        "planner": "adaptive",
+        "label": "Cost-and-risk-aware adaptive",
+        "n_runs": 240,
+        "top1": 0.6724137931034483,
+        "top1_lo": 0.6120689655172413,
+        "top1_hi": 0.7327586206896551,
+        "top3": 0.9267241379310345,
+        "top3_lo": 0.8922413793103449,
+        "top3_hi": 0.9568965517241379,
+        "precision": 0.5666666666666667,
+        "precision_lo": 0.5103645833333333,
+        "precision_hi": 0.61671875,
+        "recall": 0.5770833333333333,
+        "recall_lo": 0.5208333333333334,
+        "recall_hi": 0.6291666666666667,
+        "f1": 0.5486111111111112,
+        "f1_lo": 0.49513888888888885,
+        "f1_hi": 0.5958333333333333,
+        "exact": 0.3375,
+        "exact_lo": 0.275,
+        "exact_hi": 0.3959374999999999,
+        "brier": 0.12325915824893521,
+        "brier_lo": 0.11225610789772811,
+        "brier_hi": 0.13549119819764302,
+        "cost": 6.770833333333333,
+        "cost_lo": 6.75,
+        "cost_hi": 6.791666666666667,
+        "n_experiments": 5.995833333333334,
+        "n_experiments_lo": 5.983333333333333,
+        "n_experiments_hi": 6.0,
+        "risk_total": 0.09958333333333336,
+        "risk_total_lo": 0.09833333333333336,
+        "risk_total_hi": 0.10000000000000002,
+        "risk_violations": 0.0,
+        "risk_violations_lo": 0.0,
+        "risk_violations_hi": 0.0,
+        "stopped_confident": 0.004166666666666667
+      },
+      {
+        "planner": "lookahead2",
+        "label": "Two-step lookahead",
+        "n_runs": 240,
+        "top1": 0.6724137931034483,
+        "top1_lo": 0.6120689655172413,
+        "top1_hi": 0.7327586206896551,
+        "top3": 0.9267241379310345,
+        "top3_lo": 0.8922413793103449,
+        "top3_hi": 0.9568965517241379,
+        "precision": 0.5645833333333333,
+        "precision_lo": 0.50625,
+        "precision_hi": 0.6166666666666667,
+        "recall": 0.5770833333333333,
+        "recall_lo": 0.5208333333333334,
+        "recall_hi": 0.6291666666666667,
+        "f1": 0.5472222222222222,
+        "f1_lo": 0.4951041666666666,
+        "f1_hi": 0.5944444444444444,
+        "exact": 0.3333333333333333,
+        "exact_lo": 0.27489583333333334,
+        "exact_hi": 0.39166666666666666,
+        "brier": 0.1236884750714397,
+        "brier_lo": 0.1125558073723979,
+        "brier_hi": 0.1359337110339078,
+        "cost": 6.7625,
+        "cost_lo": 6.75,
+        "cost_hi": 6.779166666666667,
+        "n_experiments": 6.0,
+        "n_experiments_lo": 6.0,
+        "n_experiments_hi": 6.0,
+        "risk_total": 0.09833333333333334,
+        "risk_total_lo": 0.09666666666666668,
+        "risk_total_hi": 0.09958333333333336,
+        "risk_violations": 0.0,
+        "risk_violations_lo": 0.0,
+        "risk_violations_hi": 0.0,
+        "stopped_confident": 0.0125
+      }
+    ]
+  },
+  "plots": [
+    "accuracy_vs_budget.png",
+    "cost_to_diagnosis.png",
+    "reliability.png",
+    "robustness.png"
+  ],
+  "elapsed_s": 2179.4
+}
