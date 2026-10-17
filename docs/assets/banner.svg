@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-labelledby="t d">
+  <title id="t">ExperimentPilot AI</title>
+  <desc id="d">Animated banner. Left: the ExperimentPilot AI wordmark and tagline "Active diagnosis of machine-learning model failures". Right: an illustrative panel in which belief over eight candidate root causes sharpens onto one cause as experiments are run.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050a16"/><stop offset="1" stop-color="#101c3a"/></linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#8b7cf6"/></linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#17264a" stroke-width="0.6"/></pattern>
+    <clipPath id="type"><rect x="150" y="100" width="520" height="80"><animate attributeName="width" from="0" to="520" dur="2s" begin="0.3s" fill="freeze"/></rect></clipPath>
+  </defs>
+  <rect width="1200" height="340" fill="url(#bg)"/>
+  <rect width="1200" height="340" fill="url(#grid)" opacity="0.7"/>
+
+  <g transform="translate(60,108)">
+    <rect width="72" height="72" rx="16" fill="#0a1226" stroke="#1e3a6b"/>
+    <circle cx="36" cy="36" r="20" fill="none" stroke="#38bdf8" stroke-width="3.5"/>
+    <circle cx="36" cy="36" r="9" fill="none" stroke="#8b7cf6" stroke-width="3.5"/>
+    <circle cx="36" cy="36" r="3" fill="#e8f1ff"/>
+    <path d="M36 7v11M36 54v11M7 36h11M54 36h11" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="36" cy="36" r="26" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.6">
+      <animate attributeName="r" values="22;32;22" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g clip-path="url(#type)">
+    <text x="150" y="160" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="58" font-weight="700" fill="#e8f1ff">Experiment<tspan fill="#38bdf8">Pilot</tspan> <tspan fill="#8b7cf6">AI</tspan></text>
+  </g>
+  <text x="152" y="208" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" fill="#9ec5ff">Active diagnosis of machine-learning model failures</text>
+  <text x="152" y="242" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#7d93b8">Bayesian experimental design · budget- and risk-aware · simulated benchmark</text>
+  <text x="152" y="300" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#5eead4">Which test should you run next?</text>
+
+  <g transform="translate(760,60)" font-family="JetBrains Mono, Consolas, monospace" font-size="13" fill="#9ec5ff">
+    <rect x="-14" y="-24" width="436" height="256" rx="14" fill="#0a1226" stroke="#1e3a6b"/>
+    <text x="0" y="-4" fill="#7d93b8" font-size="12">belief over 8 candidate causes (illustrative)</text>
+    <g>
+      <text x="0" y="28">H1</text><rect x="40" y="16" width="300" height="14" rx="3" fill="#13213f"/><rect x="40" y="16" width="60" height="14" rx="3" fill="url(#bar)"><animate attributeName="width" values="60;70;40;30;24" keyTimes="0;0.2;0.5;0.8;1" dur="9s" repeatCount="indefinite"/></rect>
+      <text x="0" y="52">H2</text><rect x="40" y="40" width="300" height="14" rx="3" fill="#13213f"/><rect x="40" y="40" width="50" height="14" rx="3" fill="url(#bar)"><animate attributeName="width" values="50;40;30;20;12" keyTimes="0;0.2;0.5;0.8;1" dur="9s" repeatCount="indefinite"/></rect>
+      <text x="0" y="76">H3</text><rect x="40" y="64" width="300" height="14" rx="3" fill="#13213f"/><rect x="40" y="64" width="40" height="14" rx="3" fill="url(#bar)"><animate attributeName="width" values="40;30;18;10;6" keyTimes="0;0.2;0.5;0.8;1" dur="9s" repeatCount="indefinite"/></rect>
+      <text x="0" y="100">H4</text><rect x="40" y="88" width="300" height="14" rx="3" fill="#13213f"/><rect x="40" y="88" width="50" height="14" rx="3" fill="url(#bar)"><animate attributeName="width" values="50;46;30;14;8" keyTimes="0;0.2;0.5;0.8;1" dur="9s" repeatCount="indefinite"/></rect>
+      <text x="0" y="124">H5</text><rect x="40" y="112" width="300" height="14" rx="3" fill="#13213f"/><rect x="40" y="112" width="45" height="14" rx="3" fill="#8b7cf6"><animate attributeName="width" values="45;80;160;240;290" keyTimes="0;0.2;0.5;0.8;1" dur="9s" repeatCount="indefinite"/></rect>
+      <text x="0" y="148">H6</text><rect x="40" y="136" width="300" height="14" rx="3" fill="#13213f"/><rect x="40" y="136" width="45" height="14" rx="3" fill="url(#bar)"><animate attributeName="width" values="45;50;50;40;30" keyTimes="0;0.2;0.5;0.8;1" dur="9s" repeatCount="indefinite"/></rect>
+      <text x="0" y="172">H7</text><rect x="40" y="160" width="300" height="14" rx="3" fill="#13213f"/><rect x="40" y="160" width="30" height="14" rx="3" fill="url(#bar)"><animate attributeName="width" values="30;20;10;4;2" keyTimes="0;0.2;0.5;0.8;1" dur="9s" repeatCount="indefinite"/></rect>
+      <text x="0" y="196">H8</text><rect x="40" y="184" width="300" height="14" rx="3" fill="#13213f"/><rect x="40" y="184" width="25" height="14" rx="3" fill="url(#bar)"><animate attributeName="width" values="25;20;14;10;8" keyTimes="0;0.2;0.5;0.8;1" dur="9s" repeatCount="indefinite"/></rect>
+    </g>
+    <text x="0" y="222" fill="#7d93b8" font-size="12">experiments run: 0 → 7   ·   not measured data</text>
+  </g>
+</svg>
